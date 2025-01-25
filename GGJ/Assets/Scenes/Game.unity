@@ -122,7 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &138591627
+--- !u!1 &222488411
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,8 +130,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 138591628}
-  - component: {fileID: 138591629}
+  - component: {fileID: 222488412}
+  m_Layer: 0
+  m_Name: startMapCreation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &222488412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222488411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2072759090}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &330517730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 330517731}
+  - component: {fileID: 330517732}
   m_Layer: 0
   m_Name: Bloc de terrain
   m_TagString: Untagged
@@ -139,35 +170,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &138591628
+--- !u!4 &330517731
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138591627}
+  m_GameObject: {fileID: 330517730}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1595825603}
+  m_Father: {fileID: 2072759090}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &138591629
+--- !u!114 &330517732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138591627}
+  m_GameObject: {fileID: 330517730}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7a63bb4de529504bb3aac407820f8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mapCreationStartPoint: {fileID: 1672249843}
-  _tree: {fileID: 7764932130824074302, guid: 106ffb8024dbef54d89f104ceb318e95, type: 3}
+  _mapCreationStartPoint: {fileID: 222488411}
+  _cloud1: {fileID: 7764932130824074302, guid: 3dc2c99dd8d4066429b400cf83a2ac20, type: 3}
+  _cloud2: {fileID: 7764932130824074302, guid: aaeb76f5cb83fd54f8a43f1c27878c1b, type: 3}
+  _cloud3: {fileID: 7764932130824074302, guid: 67a4766f2d900484e96a2ec33f2b6039, type: 3}
+  _tree1: {fileID: 7764932130824074302, guid: 106ffb8024dbef54d89f104ceb318e95, type: 3}
+  _tree2: {fileID: 7764932130824074302, guid: 6912389767ac7df43821c0b0222c40c3, type: 3}
+  _tree3: {fileID: 7764932130824074302, guid: d55a204cddc5d9e45ab3b803a53770c2, type: 3}
   _blocTerrain1: {fileID: 4714403656202573162, guid: 5fa2262447491134db2513450bf96e1b, type: 3}
   _blocTerrain2: {fileID: 4714403656202573162, guid: 14e14bfba67210b4dad3c712deeed332, type: 3}
   _blocTerrain3: {fileID: 4714403656202573162, guid: 6d46daa2d984a3d499461624c0c3c8b2, type: 3}
@@ -346,39 +382,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c39f5507e6582d45b8ad74a4bd439c3, type: 3}
---- !u!1 &1595825602
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1595825603}
-  m_Layer: 0
-  m_Name: Terrain
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1595825603
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595825602}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 138591628}
-  - {fileID: 1672249844}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604506145
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +474,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1672249843
+--- !u!1 &2072759089
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,35 +482,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1672249844}
+  - component: {fileID: 2072759090}
   m_Layer: 0
-  m_Name: startMapCreation
+  m_Name: Terrain
   m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1672249844
+--- !u!4 &2072759090
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672249843}
+  m_GameObject: {fileID: 2072759089}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1595825603}
+  m_Children:
+  - {fileID: 330517731}
+  - {fileID: 222488412}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1604506148}
-  - {fileID: 1595825603}
   - {fileID: 1152371795}
   - {fileID: 467503803}
   - {fileID: 475487716}
+  - {fileID: 2072759090}
