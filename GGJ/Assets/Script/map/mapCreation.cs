@@ -8,7 +8,13 @@ public class mapCreation : MonoBehaviour
     [SerializeField]
     private GameObject _mapCreationStartPoint;
     [SerializeField]
-    private GameObject _tree;
+    private GameObject _cloud;
+    [SerializeField]
+    private GameObject _tree1;
+    [SerializeField]
+    private GameObject _tree2;
+    [SerializeField]
+    private GameObject _tree3;
     [SerializeField]
     private GameObject _blocTerrain1;
     [SerializeField]
@@ -25,6 +31,7 @@ public class mapCreation : MonoBehaviour
     private GameObject _blocTerrain7;
 
     private List<GameObject> _terrainList = new List<GameObject>();
+    private List<GameObject> _treeList = new List<GameObject>();
     private GameObject _previousTerrainEndPoint;
     private GameObject _currentTerrain;
 
@@ -44,6 +51,9 @@ public class mapCreation : MonoBehaviour
         _terrainList.Add(_blocTerrain6);
         _terrainList.Add(_blocTerrain7);
 
+        _treeList.Add(_tree1);
+        _treeList.Add(_tree2);
+        _treeList.Add(_tree3);
 
         _previousTerrainEndPoint = _mapCreationStartPoint;
 
@@ -72,8 +82,9 @@ public class mapCreation : MonoBehaviour
             _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
             rangeStaticSpawnEnd = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
             ////////////////// création d'un arbre
-            if (Random.Range(0, 3) == 2)
+            if (Random.Range(0, 2) == 0)
             {
+                GameObject _tree = _treeList[Random.Range(0, _treeList.Count)]; ;
                 float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
                 if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
                 {
@@ -89,23 +100,19 @@ public class mapCreation : MonoBehaviour
                 {
                     GameObject _newTree;
 
-                    _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
-                    
-                    if ((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90<30 && (Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 > -30)
+
+                    if ((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 < 30 && (Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 > -30)
                     {
-
+                        _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
                         _newTree.transform.up = -hit.normal;
+                        _newTree.transform.SetParent(transform);
                     }
-                    
 
-                    Debug.Log((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg)+90);
-
-                    _newTree.transform.SetParent(transform);
                 }
             }
-            ////////////////// création d'un nuage
-            if (Random.Range(0, 3) == 3)
+            else
             {
+                ////////////////// création d'un nuage
                 float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
                 if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
                 {
@@ -119,9 +126,8 @@ public class mapCreation : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(new Vector2(posX, posY), Vector2.up, 1000);
                 if (hit)
                 {
-                    GameObject _newTree;
-                    _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
-                    _newTree.transform.SetParent(transform);
+                    GameObject _newCloud;
+                    _newCloud = Instantiate(_cloud, new Vector3(posX, hit.point.y - getStartPoint(_cloud).transform.position.y+ Random.Range(10,15)), Quaternion.Euler(Vector3.right));
                 }
             }
         }
