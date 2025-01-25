@@ -8,7 +8,11 @@ public class mapCreation : MonoBehaviour
     [SerializeField]
     private GameObject _mapCreationStartPoint;
     [SerializeField]
-    private GameObject _cloud;
+    private GameObject _cloud1;
+    [SerializeField]
+    private GameObject _cloud2;
+    [SerializeField]
+    private GameObject _cloud3;
     [SerializeField]
     private GameObject _tree1;
     [SerializeField]
@@ -32,6 +36,7 @@ public class mapCreation : MonoBehaviour
 
     private List<GameObject> _terrainList = new List<GameObject>();
     private List<GameObject> _treeList = new List<GameObject>();
+    private List<GameObject> _cloudList = new List<GameObject>();
     private GameObject _previousTerrainEndPoint;
     private GameObject _currentTerrain;
 
@@ -54,6 +59,10 @@ public class mapCreation : MonoBehaviour
         _treeList.Add(_tree1);
         _treeList.Add(_tree2);
         _treeList.Add(_tree3);
+
+        _cloudList.Add(_cloud1);
+        _cloudList.Add(_cloud2);
+        _cloudList.Add(_cloud3);
 
         _previousTerrainEndPoint = _mapCreationStartPoint;
 
@@ -82,7 +91,7 @@ public class mapCreation : MonoBehaviour
             _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
             rangeStaticSpawnEnd = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
             ////////////////// création d'un arbre
-            if (Random.Range(0, 10) <7)
+            if (Random.Range(0, 2)==1)
             {
                 GameObject _tree = _treeList[Random.Range(0, _treeList.Count)]; ;
                 float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
@@ -127,9 +136,9 @@ public class mapCreation : MonoBehaviour
             _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
             rangeStaticSpawnEnd = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
             ////////////////// création d'un arbre
-            if (Random.Range(0, 10) < 4)
+            if (Random.Range(0, 2) == 0)
             {
-                GameObject _tree = _treeList[Random.Range(0, _treeList.Count)]; ;
+                GameObject _tree = _treeList[Random.Range(0, _treeList.Count)];
                 float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
                 if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
                 {
@@ -155,9 +164,10 @@ public class mapCreation : MonoBehaviour
 
                 }
             }
-            else if (Random.Range(0, 1)==0)
+            else
             {
                 ////////////////// création d'un nuage
+                GameObject _cloud = _cloudList[Random.Range(0, _cloudList.Count)];
                 float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
                 if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
                 {
@@ -192,9 +202,9 @@ public class mapCreation : MonoBehaviour
             _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
             rangeStaticSpawnEnd = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
             ////////////////// création d'un arbre
-            if (Random.Range(0, 2) == 0)
+            if (Random.Range(0, 10) < 4)
             {
-                GameObject _tree = _treeList[Random.Range(0, _treeList.Count)]; ;
+                GameObject _tree = _treeList[Random.Range(0, _treeList.Count)];
                 float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
                 if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
                 {
@@ -220,9 +230,10 @@ public class mapCreation : MonoBehaviour
 
                 }
             }
-            else
+            else if (Random.Range(0, 1) == 0)
             {
                 ////////////////// création d'un nuage
+                GameObject _cloud = _cloudList[Random.Range(0, _cloudList.Count)];
                 float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
                 if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
                 {

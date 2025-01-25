@@ -198,7 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mapCreationStartPoint: {fileID: 143019775}
-  _cloud: {fileID: 7764932130824074302, guid: 3dc2c99dd8d4066429b400cf83a2ac20, type: 3}
+  _cloud1: {fileID: 7764932130824074302, guid: 3dc2c99dd8d4066429b400cf83a2ac20, type: 3}
+  _cloud2: {fileID: 7764932130824074302, guid: aaeb76f5cb83fd54f8a43f1c27878c1b, type: 3}
+  _cloud3: {fileID: 7764932130824074302, guid: 67a4766f2d900484e96a2ec33f2b6039, type: 3}
   _tree1: {fileID: 7764932130824074302, guid: 106ffb8024dbef54d89f104ceb318e95, type: 3}
   _tree2: {fileID: 7764932130824074302, guid: 6912389767ac7df43821c0b0222c40c3, type: 3}
   _tree3: {fileID: 7764932130824074302, guid: d55a204cddc5d9e45ab3b803a53770c2, type: 3}
