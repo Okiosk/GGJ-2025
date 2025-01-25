@@ -15,18 +15,23 @@ public class MouseControls : MonoBehaviour
     public List<Vector2> temporaryWindPoints;
     public float temporaryWindTime;
     public float temporaryWindLifetime = 5f;
-    public float setPointTime;
-    public float setPointCooldown = .001f;
+    [SerializeField] GameObject _wind;
+    public Vector2 WindStartPoint = Vector2.zero;
+    public Vector2 WindEndPoint = Vector2.zero;
 
     private void Start()
     {
         PosUpdate();
         InvokeRepeating("MouseDirUpdate", 0, .001f);
     }
+
     private void Update()
     {
         PosUpdate();
         _mouseDir = (new Vector2(_mousePos.x, _mousePos.y) - new Vector2(_lastMousePos.x, _lastMousePos.y));
+
+        if (WindStartPoint != Vector2.zero && WindEndPoint != Vector2.zero)
+            SpawnWind();
     }
 
     private void PosUpdate()
@@ -49,12 +54,24 @@ public class MouseControls : MonoBehaviour
 
     public void TemporaryWind(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.started)
         {
-            if(setPointTime + setPointCooldown < Time.time)
-                temporaryWindPoints.Add(_mousePos);
+            WindStartPoint = _mousePos;
         }
 
+        if(context.canceled)
+        {
+            WindEndPoint = _mousePos;
+        }
+    }
 
+    private void SpawnWind()
+    {
+        var wind = Instantiate(_wind);
+        wind.GetComponent<WindAI>().StartPoint = WindStartPoint;
+        wind.GetComponent<WindAI>().EndPoint = WindEndPoint;
+
+        WindStartPoint = Vector2.zero;
+        WindEndPoint = Vector2.zero;
     }
 }
