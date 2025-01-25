@@ -16,27 +16,26 @@ public class mapCreation : MonoBehaviour
     [SerializeField]
     private GameObject _blocTerrain4;
 
-    private List<GameObject> terrainList = new List<GameObject>();
+    private List<GameObject> _terrainList = new List<GameObject>();
     private GameObject _previousTerrainEndPoint;
     private GameObject _currentTerrain;
 
     // Start is called before the first frame update
     void Start()
     {
-        terrainList.Add(_blocTerrain1);
-        terrainList.Add(_blocTerrain2);
-        terrainList.Add(_blocTerrain3);
-        terrainList.Add(_blocTerrain4);
+        _terrainList.Add(_blocTerrain1);
+        _terrainList.Add(_blocTerrain2);
+        _terrainList.Add(_blocTerrain3);
+        _terrainList.Add(_blocTerrain4);
 
 
         _previousTerrainEndPoint = _mapCreationStartPoint;
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 20; i++)
         {
-            _currentTerrain = _blocTerrain1;
+            _currentTerrain = _terrainList[Random.Range(0,_terrainList.Count)];
             GameObject _newTerrain;
-            Debug.Log(getStartPoint(_currentTerrain).transform.position);
-            Debug.Log(getEndPoint(_currentTerrain).transform.position);
             _newTerrain = Instantiate(_currentTerrain, _previousTerrainEndPoint.transform.position - getStartPoint(_currentTerrain).transform.position, Quaternion.Euler(Vector3.right));
+            _newTerrain.transform.SetParent(transform);
             _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
         }
     }
@@ -69,4 +68,6 @@ public class mapCreation : MonoBehaviour
         }
         return null;
     }
+
+   
 }
