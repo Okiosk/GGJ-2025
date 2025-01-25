@@ -46,6 +46,17 @@ public class mapCreation : MonoBehaviour
 
 
         _previousTerrainEndPoint = _mapCreationStartPoint;
+
+        ////////////////// création du terrain de début
+        for (int i = 0; i < 3; i++)
+        {
+            _currentTerrain = _blocTerrain1;
+            GameObject _newTerrain;
+            _newTerrain = Instantiate(_currentTerrain, _previousTerrainEndPoint.transform.position - getStartPoint(_currentTerrain).transform.position, Quaternion.Euler(Vector3.right));
+            _newTerrain.transform.SetParent(transform);
+            _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
+        }
+
         for (int i = 0; i < 35; i++)
         {
             ////////////////// création du bloc de terrain
@@ -79,7 +90,16 @@ public class mapCreation : MonoBehaviour
                     GameObject _newTree;
 
                     _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
-                    _newTree.transform.up = -hit.normal;
+                    
+                    if ((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90<30 && (Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 > -30)
+                    {
+
+                        _newTree.transform.up = -hit.normal;
+                    }
+                    
+
+                    Debug.Log((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg)+90);
+
                     _newTree.transform.SetParent(transform);
                 }
             }
