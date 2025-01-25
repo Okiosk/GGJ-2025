@@ -17,6 +17,12 @@ public class mapCreation : MonoBehaviour
     private GameObject _blocTerrain3;
     [SerializeField]
     private GameObject _blocTerrain4;
+    [SerializeField]
+    private GameObject _blocTerrain5;
+    [SerializeField]
+    private GameObject _blocTerrain6;
+    [SerializeField]
+    private GameObject _blocTerrain7;
 
     private List<GameObject> _terrainList = new List<GameObject>();
     private GameObject _previousTerrainEndPoint;
@@ -34,6 +40,9 @@ public class mapCreation : MonoBehaviour
         _terrainList.Add(_blocTerrain2);
         _terrainList.Add(_blocTerrain3);
         _terrainList.Add(_blocTerrain4);
+        _terrainList.Add(_blocTerrain5);
+        _terrainList.Add(_blocTerrain6);
+        _terrainList.Add(_blocTerrain7);
 
 
         _previousTerrainEndPoint = _mapCreationStartPoint;

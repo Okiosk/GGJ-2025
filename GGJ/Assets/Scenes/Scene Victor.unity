@@ -203,6 +203,9 @@ MonoBehaviour:
   _blocTerrain2: {fileID: 4714403656202573162, guid: 14e14bfba67210b4dad3c712deeed332, type: 3}
   _blocTerrain3: {fileID: 4714403656202573162, guid: 6d46daa2d984a3d499461624c0c3c8b2, type: 3}
   _blocTerrain4: {fileID: 4714403656202573162, guid: 0ca77ae307b31384597692ac1a172eb8, type: 3}
+  _blocTerrain5: {fileID: 4714403656202573162, guid: 8b0ec71db3202b9428de57cb7271696f, type: 3}
+  _blocTerrain6: {fileID: 4714403656202573162, guid: f6014831e4027a44cadfe9019b44d261, type: 3}
+  _blocTerrain7: {fileID: 4714403656202573162, guid: b1f7ee7a26f2db249a2c1ee7e1016e93, type: 3}
 --- !u!1 &1276790102
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +300,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.07
+  orthographic size: 2.69
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
