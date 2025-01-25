@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-    [SerializeField] private Transform spawnPoint;
+    private Transform _spawnPoint;
 
     public Rigidbody2D Rb;
 
@@ -13,11 +13,12 @@ public class Bubble : MonoBehaviour
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
+        _spawnPoint = GameObject.Find("BubbleSpawnPoint").GetComponent<Transform>();
     }
 
     private void OnEnable()
     {
-        transform.position = spawnPoint.position;
+        transform.position = _spawnPoint.position;
 
         //decides direction to throw
         float randomAngle = Random.Range(45, 90);
