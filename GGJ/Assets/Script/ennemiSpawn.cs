@@ -8,18 +8,11 @@ public class Ennemi1 : MonoBehaviour
     public GameObject ennemi1;
     public GameObject ennemi2;
 
-    public Ennemi ennemiData;
-
     public GameObject mainCamera;
     public GameObject spawner;
 
-    [SerializeField]
-    private GameObject oiseauxSprite;
     // Start is called before the first frame update
     public float spawnInterval;
-
-
-    public bool spawn = false;
 
     void Start()
     {
@@ -54,9 +47,7 @@ public class Ennemi1 : MonoBehaviour
         switch (choixEnnemi)
         {
             case 1:
-                GameObject newEnnemi = Instantiate(ennemi1, spawnPosition, Quaternion.identity);
-                EnnemiStats stats = newEnnemi.GetComponent<EnnemiStats>();
-                stats.OnServerInitialized(ennemiData);
+                Instantiate(ennemi1, spawnPosition, Quaternion.identity);
                 print(choixEnnemi);
                 break;
             case 2:

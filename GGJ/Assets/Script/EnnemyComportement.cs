@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnnemyComportement : MonoBehaviour
 {
     
-    public float speed = 20f;
-    public float distanceFromGround = 10f;
-    public float raycastLength = 10f;
-    public float rotationSpeed = 5f; 
+    public float speed;
+    public float distanceFromGround;
+    public float raycastLength;
+    public float rotationSpeed; 
 
     void Update()
     {
