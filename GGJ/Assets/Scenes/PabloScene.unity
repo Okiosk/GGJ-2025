@@ -152,14 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca84d0bf31e46ae46894f943f70f5250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemi1: {fileID: 8417618625250905266, guid: b6e55956c9d5ad444831823c355eb0e2, type: 3}
-  ennemi2: {fileID: 6843151600899623015, guid: ac703956dda900446b780456efc50234, type: 3}
-  ennemiData: {fileID: 0}
+  ennemi1: {fileID: 3533843879884114355, guid: b6e55956c9d5ad444831823c355eb0e2, type: 3}
+  ennemi2: {fileID: 3533843879884114355, guid: 35b468373cd4eea439b5e6c35ceece5c, type: 3}
   mainCamera: {fileID: 1919909778}
   spawner: {fileID: 242278361}
-  oiseauxSprite: {fileID: 0}
   spawnInterval: 1
-  spawn: 0
 --- !u!212 &242278363
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -237,6 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584683239}
   - component: {fileID: 584683238}
+  - component: {fileID: 584683240}
   m_Layer: 0
   m_Name: PlaceholserTerrain
   m_TagString: Untagged
@@ -305,12 +303,58 @@ Transform:
   m_GameObject: {fileID: 584683237}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.43, y: -1.56, z: 0}
+  m_LocalPosition: {x: 1.23, y: -0.69, z: 0}
   m_LocalScale: {x: 8.513, y: 8.513, z: 8.513}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &584683240
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584683237}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.4303669, y: -0.352479}
+  - {x: -0.66559947, y: 0.13082874}
+  - {x: -0.35658756, y: -0.16004923}
+  - {x: 0.01860198, y: 0.07427357}
+  - {x: 0.16432045, y: -0.07084882}
+  - {x: 0.7547526, y: 0.22828656}
+  - {x: 1.440734, y: -0.3654378}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1919909778
 GameObject:
   m_ObjectHideFlags: 0

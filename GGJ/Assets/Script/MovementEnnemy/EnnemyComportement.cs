@@ -8,7 +8,7 @@ public class EnnemyComportement : MonoBehaviour
     public float speed;
     public float distanceFromGround;
     public float raycastLength;
-    public float rotationSpeed; 
+    public float rotationSpeed;  
 
     void Update()
     {

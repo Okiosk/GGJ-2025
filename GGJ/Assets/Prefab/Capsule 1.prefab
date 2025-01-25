@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2747897257754162286}
   - component: {fileID: 5996804746542405152}
-  - component: {fileID: 2072257528565836211}
+  - component: {fileID: 4510903123298996044}
   m_Layer: 0
   m_Name: Capsule 1
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2072257528565836211
+--- !u!114 &4510903123298996044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  distanceFromGround: 5
+  distanceFromGround: 1
   raycastLength: 40
   rotationSpeed: 5
