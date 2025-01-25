@@ -6,13 +6,13 @@ public class Bubble : MonoBehaviour
 {
     [SerializeField] private Transform spawnPoint;
 
-    private Rigidbody2D _rb;
+    public Rigidbody2D Rb;
 
     [SerializeField] private float _throwForce = 5;
 
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        Rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -24,7 +24,7 @@ public class Bubble : MonoBehaviour
         Vector3 dir = Quaternion.AngleAxis(randomAngle, Vector3.up) * Vector3.forward;
 
         //throw the bubble
-        _rb.AddForce(new Vector2(dir.x, dir.z).normalized * _throwForce);
+        Rb.AddForce(new Vector2(dir.x, dir.z).normalized * _throwForce);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
