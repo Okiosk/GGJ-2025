@@ -37,7 +37,7 @@ public class mapCreation : MonoBehaviour
 
 
         _previousTerrainEndPoint = _mapCreationStartPoint;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 35; i++)
         {
             // création du bloc de terrain
             _currentTerrain = _terrainList[Random.Range(0,_terrainList.Count)];
