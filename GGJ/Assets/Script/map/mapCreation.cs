@@ -48,44 +48,69 @@ public class mapCreation : MonoBehaviour
         _previousTerrainEndPoint = _mapCreationStartPoint;
         for (int i = 0; i < 35; i++)
         {
-            // création du bloc de terrain
-            _currentTerrain = _terrainList[Random.Range(0,_terrainList.Count)];
+            ////////////////// création du bloc de terrain
+            _currentTerrain = _terrainList[Random.Range(0, _terrainList.Count)];
             GameObject _newTerrain;
             _newTerrain = Instantiate(_currentTerrain, _previousTerrainEndPoint.transform.position - getStartPoint(_currentTerrain).transform.position, Quaternion.Euler(Vector3.right));
             _newTerrain.transform.SetParent(transform);
 
-            // création d'obstacle static
+            ////////////////// création d'obstacle static
             Vector3 rangeStaticSpawnStart;
             Vector3 rangeStaticSpawnEnd;
             rangeStaticSpawnStart = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
             _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
             rangeStaticSpawnEnd = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
-            float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
-            if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
+            ////////////////// création d'un arbre
+            if (Random.Range(0, 3) == 2)
             {
-                posY = rangeStaticSpawnStart.y;
-            }
-            else
-            {
-                posY = rangeStaticSpawnEnd.y;
-            }
-            posY -= 10;
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(posX, posY), Vector2.up,1000);
-            if (hit)
-            {
-                GameObject _newTree;
-                _newTree = Instantiate(_tree,new Vector3(posX,hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
-                _newTree.transform.SetParent(transform);
-            }
+                float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
+                if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
+                {
+                    posY = rangeStaticSpawnStart.y;
+                }
+                else
+                {
+                    posY = rangeStaticSpawnEnd.y;
+                }
+                posY -= 10;
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(posX, posY), Vector2.up, 1000);
+                if (hit)
+                {
+                    GameObject _newTree;
 
-
+                    _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
+                    _newTree.transform.up = -hit.normal;
+                    _newTree.transform.SetParent(transform);
+                }
+            }
+            ////////////////// création d'un nuage
+            if (Random.Range(0, 3) == 3)
+            {
+                float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
+                if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
+                {
+                    posY = rangeStaticSpawnStart.y;
+                }
+                else
+                {
+                    posY = rangeStaticSpawnEnd.y;
+                }
+                posY -= 10;
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(posX, posY), Vector2.up, 1000);
+                if (hit)
+                {
+                    GameObject _newTree;
+                    _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
+                    _newTree.transform.SetParent(transform);
+                }
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private GameObject getStartPoint(GameObject _blocTerrain)
@@ -111,5 +136,5 @@ public class mapCreation : MonoBehaviour
         return null;
     }
 
-   
+
 }
