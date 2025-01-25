@@ -199,9 +199,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mapCreationStartPoint: {fileID: 143019775}
   _blocTerrain1: {fileID: 4714403656202573162, guid: 5fa2262447491134db2513450bf96e1b, type: 3}
-  _blocTerrain2: {fileID: 0}
-  _blocTerrain3: {fileID: 0}
-  _blocTerrain4: {fileID: 0}
+  _blocTerrain2: {fileID: 4714403656202573162, guid: 14e14bfba67210b4dad3c712deeed332, type: 3}
+  _blocTerrain3: {fileID: 4714403656202573162, guid: 6d46daa2d984a3d499461624c0c3c8b2, type: 3}
+  _blocTerrain4: {fileID: 4714403656202573162, guid: 0ca77ae307b31384597692ac1a172eb8, type: 3}
 --- !u!1 &1276790102
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +296,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1.07
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -16,18 +16,28 @@ public class mapCreation : MonoBehaviour
     [SerializeField]
     private GameObject _blocTerrain4;
 
+    private List<GameObject> terrainList = new List<GameObject>();
     private GameObject _previousTerrainEndPoint;
     private GameObject _currentTerrain;
 
     // Start is called before the first frame update
     void Start()
     {
+        terrainList.Add(_blocTerrain1);
+        terrainList.Add(_blocTerrain2);
+        terrainList.Add(_blocTerrain3);
+        terrainList.Add(_blocTerrain4);
+
+
         _previousTerrainEndPoint = _mapCreationStartPoint;
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 8; i++)
         {
             _currentTerrain = _blocTerrain1;
             GameObject _newTerrain;
-            _newTerrain = Instantiate(_currentTerrain, getEndPoint(_currentTerrain).transform.position + _previousTerrainEndPoint.transform.position,Quaternion.Euler(Vector3.right));
+            Debug.Log(getStartPoint(_currentTerrain).transform.position);
+            Debug.Log(getEndPoint(_currentTerrain).transform.position);
+            _newTerrain = Instantiate(_currentTerrain, _previousTerrainEndPoint.transform.position - getStartPoint(_currentTerrain).transform.position, Quaternion.Euler(Vector3.right));
+            _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
         }
     }
 
@@ -37,24 +47,24 @@ public class mapCreation : MonoBehaviour
         
     }
 
-    private Transform getStartPoint(GameObject _blocTerrain)
+    private GameObject getStartPoint(GameObject _blocTerrain)
     {
         for (int j = 0; j < _blocTerrain.transform.childCount; j++)
         {
             if (_blocTerrain.transform.GetChild(j).name == "startPoint")
             {
-                return _blocTerrain.transform.GetChild(j);
+                return _blocTerrain.transform.GetChild(j).gameObject;
             }
         }
         return null;
     }
-    private Transform getEndPoint(GameObject _blocTerrain)
+    private GameObject getEndPoint(GameObject _blocTerrain)
     {
         for (int j = 0; j < _blocTerrain.transform.childCount; j++)
         {
             if (_blocTerrain.transform.GetChild(j).name == "endPoint")
             {
-                return _blocTerrain.transform.GetChild(j);
+                return _blocTerrain.transform.GetChild(j).gameObject;
             }
         }
         return null;
