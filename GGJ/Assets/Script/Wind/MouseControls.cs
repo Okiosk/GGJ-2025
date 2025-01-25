@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,13 @@ public class MouseControls : MonoBehaviour
     private Vector3 _lastMousePos;
     private Vector3 _mousePos;
     public Vector2 _mouseDir;
+
+    public List<Vector2> temporaryWindPoints;
+    public float temporaryWindTime;
+    public float temporaryWindLifetime = 5f;
+    public float setPointTime;
+    public float setPointCooldown = .001f;
+
     private void Start()
     {
         PosUpdate();
@@ -29,13 +37,24 @@ public class MouseControls : MonoBehaviour
         transform.position = _mousePos;
     }
 
+    private void MouseDirUpdate()
+    {
+        _lastMousePos = _mousePos;
+    }
+
     public void MouseSpeedUpdate(InputAction.CallbackContext context)
     {
         _mouseSpeed = context.ReadValue<Vector2>().sqrMagnitude * 0.01f;
     }
 
-    private void MouseDirUpdate()
+    public void TemporaryWind(InputAction.CallbackContext context)
     {
-        _lastMousePos = _mousePos;
+        if(context.performed)
+        {
+            if(setPointTime + setPointCooldown < Time.time)
+                temporaryWindPoints.Add(_mousePos);
+        }
+
+
     }
 }
