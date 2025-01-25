@@ -132,8 +132,9 @@ GameObject:
   m_Component:
   - component: {fileID: 548052150}
   - component: {fileID: 548052149}
-  - component: {fileID: 548052151}
   - component: {fileID: 548052152}
+  - component: {fileID: 548052151}
+  - component: {fileID: 548052153}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -281,7 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27759fc28012e6b4aad13d66aecf70c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 1
+  _radius: 3
+  _speed: 5
 --- !u!114 &548052152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,8 +311,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 548052151}
-        m_TargetAssemblyTypeName: Wind, Assembly-CSharp
+      - m_Target: {fileID: 548052153}
+        m_TargetAssemblyTypeName: MouseControls, Assembly-CSharp
         m_MethodName: MouseSpeedUpdate
         m_Mode: 0
         m_Arguments:
@@ -328,6 +330,20 @@ MonoBehaviour:
   m_DefaultActionMap: Wind
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &548052153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548052148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b47c8efd23d004c9061a52a72721a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mouseSpeed: 0
+  _mouseDir: {x: 0, y: 0}
 --- !u!1 &1266842631
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,43 +10,23 @@ public class Wind : MonoBehaviour
 {
     [Header("Wind settings")]
     [SerializeField] private float _radius = 2f;
+    [SerializeField] private float _speed = 5f;
 
-    [Header("Mouse Settings")]
-    private float _mouseSpeed;
-    private Vector3 _lastMousePos;
-    private Vector3 _mousePos;
-    private Vector2 _mouseDir;
-    private void Start()
+    private Vector2 _force;
+    private MouseControls _controls;
+
+    private void Awake()
     {
-        PosUpdate();
-        InvokeRepeating("MouseDirUpdate", 0, .001f);
+        _controls = GetComponent<MouseControls>();
     }
+
     private void Update()
     {
-        PosUpdate();
-        _mouseDir = (new Vector2(_mousePos.x, _mousePos.y) - new Vector2(_lastMousePos.x, _lastMousePos.y));
-        WindForce();
+        _force = _controls._mouseDir * _controls._mouseSpeed;
+        WindForce(_force);
     }
 
-    private void PosUpdate()
-    {
-        _mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        _mousePos.z = 0;
-
-        transform.position = _mousePos;
-    }
-
-    public void MouseSpeedUpdate(InputAction.CallbackContext context)
-    {
-        _mouseSpeed = context.ReadValue<Vector2>().sqrMagnitude * 0.02f;
-    }
-
-    private void MouseDirUpdate()
-    {
-        _lastMousePos = _mousePos;
-    }
-
-    private void WindForce()
+    private void WindForce(Vector2 force)
     {
         Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, _radius);
 
@@ -54,8 +34,10 @@ public class Wind : MonoBehaviour
         {
             if(target.TryGetComponent(out Bubble comp))
             {
-                comp.Rb.AddForce(_mouseDir * _mouseSpeed);
+                comp.Rb.AddForce(force);
             }
         }
     }
+
+
 }
