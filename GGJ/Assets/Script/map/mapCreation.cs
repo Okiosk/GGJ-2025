@@ -90,7 +90,16 @@ public class mapCreation : MonoBehaviour
                     GameObject _newTree;
 
                     _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
-                    _newTree.transform.up = -hit.normal;
+                    
+                    if ((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90<30 && (Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 > -30)
+                    {
+
+                        _newTree.transform.up = -hit.normal;
+                    }
+                    
+
+                    Debug.Log((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg)+90);
+
                     _newTree.transform.SetParent(transform);
                 }
             }
