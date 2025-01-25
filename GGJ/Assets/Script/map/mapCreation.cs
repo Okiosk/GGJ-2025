@@ -46,6 +46,17 @@ public class mapCreation : MonoBehaviour
 
 
         _previousTerrainEndPoint = _mapCreationStartPoint;
+
+        ////////////////// création du terrain de début
+        for (int i = 0; i < 3; i++)
+        {
+            _currentTerrain = _blocTerrain1;
+            GameObject _newTerrain;
+            _newTerrain = Instantiate(_currentTerrain, _previousTerrainEndPoint.transform.position - getStartPoint(_currentTerrain).transform.position, Quaternion.Euler(Vector3.right));
+            _newTerrain.transform.SetParent(transform);
+            _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
+        }
+
         for (int i = 0; i < 35; i++)
         {
             ////////////////// création du bloc de terrain
