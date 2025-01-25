@@ -66,8 +66,118 @@ public class mapCreation : MonoBehaviour
             _newTerrain.transform.SetParent(transform);
             _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
         }
+        ////////////////// création du terrain de jeu partie 1
+        for (int i = 0; i < 6; i++)
+        {
+            ////////////////// création du bloc de terrain
+            _currentTerrain = _terrainList[Random.Range(0, _terrainList.Count)];
+            GameObject _newTerrain;
+            _newTerrain = Instantiate(_currentTerrain, _previousTerrainEndPoint.transform.position - getStartPoint(_currentTerrain).transform.position, Quaternion.Euler(Vector3.right));
+            _newTerrain.transform.SetParent(transform);
 
-        for (int i = 0; i < 35; i++)
+            ////////////////// création d'obstacle static
+            Vector3 rangeStaticSpawnStart;
+            Vector3 rangeStaticSpawnEnd;
+            rangeStaticSpawnStart = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
+            _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
+            rangeStaticSpawnEnd = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
+            ////////////////// création d'un arbre
+            if (Random.Range(0, 10) <7)
+            {
+                GameObject _tree = _treeList[Random.Range(0, _treeList.Count)]; ;
+                float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
+                if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
+                {
+                    posY = rangeStaticSpawnStart.y;
+                }
+                else
+                {
+                    posY = rangeStaticSpawnEnd.y;
+                }
+                posY -= 10;
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(posX, posY), Vector2.up, 1000);
+                if (hit)
+                {
+                    GameObject _newTree;
+
+
+                    if ((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 < 30 && (Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 > -30)
+                    {
+                        _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
+                        _newTree.transform.up = -hit.normal;
+                        _newTree.transform.SetParent(transform);
+                    }
+
+                }
+            }
+        }
+        ////////////////// création du terrain de jeu partie 2
+        for (int i = 0; i < 6; i++)
+        {
+            ////////////////// création du bloc de terrain
+            _currentTerrain = _terrainList[Random.Range(0, _terrainList.Count)];
+            GameObject _newTerrain;
+            _newTerrain = Instantiate(_currentTerrain, _previousTerrainEndPoint.transform.position - getStartPoint(_currentTerrain).transform.position, Quaternion.Euler(Vector3.right));
+            _newTerrain.transform.SetParent(transform);
+
+            ////////////////// création d'obstacle static
+            Vector3 rangeStaticSpawnStart;
+            Vector3 rangeStaticSpawnEnd;
+            rangeStaticSpawnStart = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
+            _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
+            rangeStaticSpawnEnd = new Vector3(_previousTerrainEndPoint.transform.position.x, _previousTerrainEndPoint.transform.position.y, _previousTerrainEndPoint.transform.position.z);
+            ////////////////// création d'un arbre
+            if (Random.Range(0, 10) < 4)
+            {
+                GameObject _tree = _treeList[Random.Range(0, _treeList.Count)]; ;
+                float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
+                if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
+                {
+                    posY = rangeStaticSpawnStart.y;
+                }
+                else
+                {
+                    posY = rangeStaticSpawnEnd.y;
+                }
+                posY -= 10;
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(posX, posY), Vector2.up, 1000);
+                if (hit)
+                {
+                    GameObject _newTree;
+
+
+                    if ((Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 < 30 && (Mathf.Atan2(hit.normal.y, hit.normal.x) * Mathf.Rad2Deg) + 90 > -30)
+                    {
+                        _newTree = Instantiate(_tree, new Vector3(posX, hit.point.y - getStartPoint(_tree).transform.position.y), Quaternion.Euler(Vector3.right));
+                        _newTree.transform.up = -hit.normal;
+                        _newTree.transform.SetParent(transform);
+                    }
+
+                }
+            }
+            else if (Random.Range(0, 1)==0)
+            {
+                ////////////////// création d'un nuage
+                float posX = Random.Range(rangeStaticSpawnStart.x, rangeStaticSpawnEnd.x);
+                if (rangeStaticSpawnStart.y < rangeStaticSpawnEnd.y)
+                {
+                    posY = rangeStaticSpawnStart.y;
+                }
+                else
+                {
+                    posY = rangeStaticSpawnEnd.y;
+                }
+                posY -= 10;
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(posX, posY), Vector2.up, 1000);
+                if (hit)
+                {
+                    GameObject _newCloud;
+                    _newCloud = Instantiate(_cloud, new Vector3(posX, hit.point.y - getStartPoint(_cloud).transform.position.y + Random.Range(10, 15)), Quaternion.Euler(Vector3.right));
+                }
+            }
+        }
+        ////////////////// création du terrain de jeu partie 3
+        for (int i = 0; i < 6; i++)
         {
             ////////////////// création du bloc de terrain
             _currentTerrain = _terrainList[Random.Range(0, _terrainList.Count)];
@@ -127,7 +237,7 @@ public class mapCreation : MonoBehaviour
                 if (hit)
                 {
                     GameObject _newCloud;
-                    _newCloud = Instantiate(_cloud, new Vector3(posX, hit.point.y - getStartPoint(_cloud).transform.position.y+ Random.Range(10,15)), Quaternion.Euler(Vector3.right));
+                    _newCloud = Instantiate(_cloud, new Vector3(posX, hit.point.y - getStartPoint(_cloud).transform.position.y + Random.Range(10, 15)), Quaternion.Euler(Vector3.right));
                 }
             }
         }
