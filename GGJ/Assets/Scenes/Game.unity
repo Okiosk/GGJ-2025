@@ -276,6 +276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1406611898335024576, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: _wind
+      value: 
+      objectReference: {fileID: 7544948003667993663, guid: 1146d5f5c40a9d24eb0766f367681da3, type: 3}
     - target: {fileID: 4483446852210115676, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -316,6 +320,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 9f35538f-01f9-4f44-86e4-6f4ecc4fe601
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Wind/Click[/Mouse/leftButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 995633836}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TemporaryWind
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MouseControls, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683109182753960587, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7414313554904860352, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
       propertyPath: m_Name
       value: PlayerWind
@@ -325,6 +369,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+--- !u!114 &995633836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1406611898335024576, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+  m_PrefabInstance: {fileID: 475487716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b47c8efd23d004c9061a52a72721a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1152371795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,6 +388,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2893994990409326019, guid: 5c39f5507e6582d45b8ad74a4bd439c3, type: 3}
+      propertyPath: Count
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972420749543076240, guid: 5c39f5507e6582d45b8ad74a4bd439c3, type: 3}
+      propertyPath: _spawnInterval
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 6806632710843165385, guid: 5c39f5507e6582d45b8ad74a4bd439c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
