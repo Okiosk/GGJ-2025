@@ -10,12 +10,19 @@ public class Bubble : MonoBehaviour
     private Animator _anim;
 
     [SerializeField] private float _throwForce = 5;
+    [SerializeField] private float _minSize;
+    [SerializeField] private float _maxSize;
+    [SerializeField] private AudioSource _soundPop;
 
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _spawnPoint = GameObject.Find("BubbleSpawnPoint").GetComponent<Transform>();
+        float randomScale = Random.Range(_minSize, _maxSize);
+        transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+        float randomRotation = Random.Range(0, 360);
+        transform.rotation = new Quaternion(0, 0, randomRotation, 0);
     }
 
     private void OnEnable()
@@ -38,6 +45,7 @@ public class Bubble : MonoBehaviour
         if(!other.transform.TryGetComponent<Bubble>(out Bubble comp))
         {
             Rb.bodyType = RigidbodyType2D.Static;
+            _soundPop.Play();
             _anim.SetTrigger("~die");
         }
     }
