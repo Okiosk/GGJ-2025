@@ -33,6 +33,8 @@ public class mapCreation : MonoBehaviour
     private GameObject _blocTerrain6;
     [SerializeField]
     private GameObject _blocTerrain7;
+    [SerializeField]
+    private int _mapNbBloc;
 
     private List<GameObject> _terrainList = new List<GameObject>();
     private List<GameObject> _treeList = new List<GameObject>();
@@ -40,7 +42,7 @@ public class mapCreation : MonoBehaviour
     private GameObject _previousTerrainEndPoint;
     private GameObject _currentTerrain;
 
-
+    public float tailleMap;
 
     // Ne cherche pas à comprendre pourquoi je la declare ici
     private float posY;
@@ -48,6 +50,7 @@ public class mapCreation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tailleMap = _mapCreationStartPoint.transform.position.x;
         _terrainList.Add(_blocTerrain1);
         _terrainList.Add(_blocTerrain2);
         _terrainList.Add(_blocTerrain3);
@@ -76,7 +79,7 @@ public class mapCreation : MonoBehaviour
             _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
         }
         ////////////////// création du terrain de jeu partie 1
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < (_mapNbBloc/3); i++)
         {
             ////////////////// création du bloc de terrain
             _currentTerrain = _terrainList[Random.Range(0, _terrainList.Count)];
@@ -121,7 +124,7 @@ public class mapCreation : MonoBehaviour
             }
         }
         ////////////////// création du terrain de jeu partie 2
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < (_mapNbBloc/3); i++)
         {
             ////////////////// création du bloc de terrain
             _currentTerrain = _terrainList[Random.Range(0, _terrainList.Count)];
@@ -187,7 +190,7 @@ public class mapCreation : MonoBehaviour
             }
         }
         ////////////////// création du terrain de jeu partie 3
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < (_mapNbBloc/3)+(_mapNbBloc%3); i++)
         {
             ////////////////// création du bloc de terrain
             _currentTerrain = _terrainList[Random.Range(0, _terrainList.Count)];
@@ -252,6 +255,8 @@ public class mapCreation : MonoBehaviour
                 }
             }
         }
+
+        tailleMap = _previousTerrainEndPoint.transform.position.x - tailleMap;
     }
 
     // Update is called once per frame

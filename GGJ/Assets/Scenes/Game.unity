@@ -211,6 +211,8 @@ MonoBehaviour:
   _blocTerrain5: {fileID: 4714403656202573162, guid: 8b0ec71db3202b9428de57cb7271696f, type: 3}
   _blocTerrain6: {fileID: 4714403656202573162, guid: f6014831e4027a44cadfe9019b44d261, type: 3}
   _blocTerrain7: {fileID: 4714403656202573162, guid: b1f7ee7a26f2db249a2c1ee7e1016e93, type: 3}
+  _mapNbBloc: 10
+  tailleMap: 0
 --- !u!114 &428361388 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2893994990409326019, guid: 5c39f5507e6582d45b8ad74a4bd439c3, type: 3}
