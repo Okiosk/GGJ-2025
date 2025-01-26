@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6683109182753960587}
   - component: {fileID: 1113720123543035046}
   - component: {fileID: 1406611898335024576}
+  - component: {fileID: 4433951173231368898}
   m_Layer: 0
   m_Name: PlayerWind
   m_TagString: Untagged
@@ -189,6 +190,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0dfaee94-9902-4497-8cf1-a47fc11d70ac
     m_ActionName: Wind/MouseDelta[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f35538f-01f9-4f44-86e4-6f4ecc4fe601
+    m_ActionName: Wind/Click[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Wind
@@ -207,7 +212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 3
-  _speed: 5
 --- !u!114 &1406611898335024576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +226,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mouseSpeed: 0
   _mouseDir: {x: 0, y: 0}
+  temporaryWindPoints: []
+  temporaryWindTime: 0
+  temporaryWindLifetime: 5
+  _wind: {fileID: 0}
+  WindStartPoint: {x: 0, y: 0}
+  WindEndPoint: {x: 0, y: 0}
+--- !u!114 &4433951173231368898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414313554904860352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9db2b7d6a09490478ee6cd9015518f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
