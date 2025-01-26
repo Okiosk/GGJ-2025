@@ -5,15 +5,14 @@ using UnityEngine;
 public class EnnemyComportement : MonoBehaviour
 {
     
-    public float speed;
-    public float distanceFromGround;
-    public float raycastLength;
-    public float rotationSpeed; 
+    public float speed = 2.5f;
+    public float distanceFromGround=5;
+    public float raycastLength=40;
+    public float rotationSpeed=5; 
 
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
-
         LayerMask mask = LayerMask.GetMask("Ground");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, mask);
 
@@ -32,8 +31,6 @@ public class EnnemyComportement : MonoBehaviour
 
             Debug.Log("Objet détecté : " + hit.collider.name);      
         }
-
-       
     }
     private void OnDrawGizmos()
     {

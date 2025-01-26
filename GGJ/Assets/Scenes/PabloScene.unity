@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242278364}
   - component: {fileID: 242278363}
-  - component: {fileID: 242278362}
+  - component: {fileID: 242278365}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -140,26 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &242278362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242278361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca84d0bf31e46ae46894f943f70f5250, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ennemi1: {fileID: 8417618625250905266, guid: b6e55956c9d5ad444831823c355eb0e2, type: 3}
-  ennemi2: {fileID: 6843151600899623015, guid: ac703956dda900446b780456efc50234, type: 3}
-  ennemiData: {fileID: 0}
-  mainCamera: {fileID: 1919909778}
-  spawner: {fileID: 242278361}
-  oiseauxSprite: {fileID: 0}
-  spawnInterval: 1
-  spawn: 0
 --- !u!212 &242278363
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -227,6 +207,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1919909781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &242278365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242278361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca84d0bf31e46ae46894f943f70f5250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemi1: {fileID: 3533843879884114355, guid: b6e55956c9d5ad444831823c355eb0e2, type: 3}
+  ennemi2: {fileID: 3533843879884114355, guid: 35b468373cd4eea439b5e6c35ceece5c, type: 3}
+  mainCamera: {fileID: 1919909778}
+  spawner: {fileID: 242278361}
+  spawnInterval: 0.1
 --- !u!1 &584683237
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +234,8 @@ GameObject:
   m_Component:
   - component: {fileID: 584683239}
   - component: {fileID: 584683238}
-  m_Layer: 0
+  - component: {fileID: 584683240}
+  m_Layer: 6
   m_Name: PlaceholserTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,6 +309,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &584683240
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584683237}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.4100078, y: -0.34971777}
+  - {x: -0.66686136, y: 0.11851737}
+  - {x: -0.35785958, y: -0.15216058}
+  - {x: 0.00923273, y: 0.06815912}
+  - {x: 0.16455036, y: -0.074774906}
+  - {x: 0.7914285, y: 0.21759151}
+  - {x: 1.426661, y: -0.34638718}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1919909778
 GameObject:
   m_ObjectHideFlags: 0
