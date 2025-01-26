@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -18,6 +19,16 @@ public class GameManager : MonoBehaviour
 
 
     private int total;
+    private bool start = false;
+
+    public void input(InputAction.CallbackContext context)
+    {
+        Debug.Log("sdfbrdfqs");
+        if (context.started)
+        {
+            start = true;
+        }
+    }
 
     private void Update()
     {
@@ -25,7 +36,7 @@ public class GameManager : MonoBehaviour
         if (GameState == "waitStart")
         {
             ui.afficheStart();
-            if (1==1)
+            if (start)
             {
                 GameState = "starting";
                 ui.enleveStart();
@@ -35,7 +46,25 @@ public class GameManager : MonoBehaviour
         {
             
             bubbleMana.StartGame();
-            GameState = "playing";
+            
+            GameState = "starting2";
+        }
+        if (GameState == "starting2")
+        {
+            total = 0;
+            foreach (var bubble in listebubble._objPool)
+            {
+                if (bubble.activeSelf)
+                {
+                    total++;
+                }
+
+            }
+            if (total > 10)
+            {
+                GameState = "playing";
+            }
+
         }
         if (GameState == "playing")
         {
