@@ -49,8 +49,8 @@ public class MouseControls : MonoBehaviour
 
     public void MouseSpeedUpdate(InputAction.CallbackContext context)
     {
-        _mouseSpeed = context.ReadValue<Vector2>().sqrMagnitude * 0.01f;
-        Debug.Log(_mouseSpeed);
+        _mouseSpeed = context.ReadValue<Vector2>().sqrMagnitude * 0.1f;
+        _mouseSpeed = Mathf.Clamp(_mouseSpeed, 0, 30);
     }
 
     public void TemporaryWind(InputAction.CallbackContext context)
