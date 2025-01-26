@@ -8,13 +8,17 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Transform _child;
     private float _yOffset;
 
+    private float targetX;
+
     [SerializeField] float _speed;
 
     private void Start()
     {
         _yOffset = Mathf.Abs(transform.position.y - _child.position.y);
+
+        InvokeRepeating("TargetX", 0, 1);
     }
-    private float TargetX()
+    private void TargetX()
     {
         float sumX = 0;
         int nbActive = 0;
@@ -26,7 +30,7 @@ public class CameraMovement : MonoBehaviour
                 nbActive++;
             }
         }
-        return sumX/nbActive;
+        targetX = sumX/nbActive;
     }
 
     private void Update()
@@ -39,12 +43,15 @@ public class CameraMovement : MonoBehaviour
         float yMove = _child.position.y + _yOffset;
         float xMove = transform.position.x;
 
-        float targetX = TargetX();
+        
         if (transform.position.x < targetX)
             xMove += _speed * Time.deltaTime;
         else if (transform.position.x > targetX)
             xMove -= _speed * Time.deltaTime;
 
-        transform.position = new Vector2 (xMove, yMove);
+        Vector3 targetPos = new Vector3(xMove, yMove, -10);
+        targetPos = Vector3.Lerp(transform.position, targetPos, .3f);
+        targetPos.z = -10;
+        transform.position = targetPos;
     }
 }
