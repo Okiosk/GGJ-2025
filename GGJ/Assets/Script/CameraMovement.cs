@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
 
     private float targetX;
 
-    [SerializeField] float _speed;
+    [SerializeField] float _speed = 6;
 
     private void Start()
     {
