@@ -9,13 +9,18 @@ public class WindAI : MonoBehaviour
     private float _bornTime;
     [SerializeField] private float _lifeTime;
 
-    [SerializeField] public float Speed = 25f;
+    [SerializeField] public float Speed = 20f;
 
     private Coroutine _coroutine;
 
     private void Awake()
     {
         _bornTime = Time.time;
+    }
+
+    private void Start()
+    {
+        GetComponent<TrailRendererReset>().TrailReset();
     }
     private void Update()
     {
@@ -28,6 +33,7 @@ public class WindAI : MonoBehaviour
 
     private IEnumerator Move()
     {
+        GetComponent<TrailRendererReset>().TrailReset();
         transform.position = StartPoint;
         float dist = Vector3.Distance(transform.position, EndPoint);
         float startDist = dist;
