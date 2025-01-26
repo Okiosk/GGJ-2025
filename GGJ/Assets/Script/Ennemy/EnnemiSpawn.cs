@@ -28,7 +28,7 @@ public class EnnemiSpawn : MonoBehaviour
     }
     private IEnumerator SpawnEnemyCoroutine()
     {
-        spawnInterval = Random.Range(2f, 3f);
+        spawnInterval = Random.Range(15f, 25f);
 
 
         while(true)

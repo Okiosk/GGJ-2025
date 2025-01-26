@@ -3,7 +3,13 @@ guid: ca84d0bf31e46ae46894f943f70f5250
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ennemi1: {fileID: 3533843879884114355, guid: b6e55956c9d5ad444831823c355eb0e2, type: 3}
+  - ennemi2: {fileID: 3533843879884114355, guid: 52922c81ca15ea34380abf180bf7edc2, type: 3}
+  - ennemi3: {fileID: 3533843879884114355, guid: 920dfd8f50c07a740985e6819ef425a7, type: 3}
+  - ennemi4: {fileID: 3533843879884114355, guid: 2b5cf789fb6af8d468d8b8cad45f2bab, type: 3}
+  - mainCamera: {instanceID: 0}
+  - spawner: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
