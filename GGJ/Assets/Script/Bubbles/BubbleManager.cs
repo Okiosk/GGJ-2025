@@ -15,6 +15,11 @@ public class BubbleManager : MonoBehaviour
         _pool = GetComponent<Pool>();
     }
 
+    private void Start()
+    {
+        StartGame();
+    }
+
     private void Spawn()
     {
         _spawnedCount++;

@@ -782,6 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bubblePool: {fileID: 428361388}
   _child: {fileID: 793947167}
+  _map: {fileID: 330517732}
   targetX: 0
   _speed: 6
 --- !u!1001 &1624167812

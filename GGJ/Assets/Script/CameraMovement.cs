@@ -22,7 +22,7 @@ public class CameraMovement : MonoBehaviour
     }
     private void TargetX()
     {
-        float sumX = 0;
+        /*float sumX = 0;
         int nbActive = 0;
         foreach (var bubble in _bubblePool._objPool)
         {
@@ -32,7 +32,8 @@ public class CameraMovement : MonoBehaviour
                 nbActive++;
             }
         }
-        targetX = sumX/nbActive;
+        targetX = sumX/nbActive;*/
+        targetX = _child.position.x;
     }
 
     private void Update()
