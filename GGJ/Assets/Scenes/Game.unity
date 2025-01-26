@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 222488412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: startMapCreation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330517731}
   - component: {fileID: 330517732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bloc de terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,6 +369,57 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
+--- !u!1 &813135454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 813135455}
+  - component: {fileID: 813135456}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &813135455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813135454}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.67, y: 0.8399999, z: 10}
+  m_LocalScale: {x: 1, y: 5.3592267, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1604506148}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &813135456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813135454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca84d0bf31e46ae46894f943f70f5250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemi1: {fileID: 3533843879884114355, guid: b6e55956c9d5ad444831823c355eb0e2, type: 3}
+  ennemi2: {fileID: 3533843879884114355, guid: 52922c81ca15ea34380abf180bf7edc2, type: 3}
+  ennemi3: {fileID: 3533843879884114355, guid: 920dfd8f50c07a740985e6819ef425a7, type: 3}
+  ennemi4: {fileID: 3533843879884114355, guid: 2b5cf789fb6af8d468d8b8cad45f2bab, type: 3}
+  mainCamera: {fileID: 1604506145}
+  spawner: {fileID: 813135454}
+  spawnInterval: 1
 --- !u!114 &995633836 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1406611898335024576, guid: b7c3b249d836de34ea1bd13902fb7aaa, type: 3}
@@ -534,7 +585,8 @@ Transform:
   m_LocalPosition: {x: 9, y: 3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 813135455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072759089
@@ -546,7 +598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2072759090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
