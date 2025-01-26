@@ -7,6 +7,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Pool _bubblePool;
     [SerializeField] private Transform _child;
     private float _yOffset;
+    private float _xOffset;
 
     [SerializeField] private mapCreation _map;
 
@@ -17,6 +18,7 @@ public class CameraMovement : MonoBehaviour
     private void Start()
     {
         _yOffset = Mathf.Abs(transform.position.y - _child.position.y);
+        _xOffset = Mathf.Abs(transform.localPosition.x - _child.position.x);
 
         InvokeRepeating("TargetX", 0, 1);
     }
@@ -33,7 +35,7 @@ public class CameraMovement : MonoBehaviour
             }
         }
         targetX = sumX/nbActive;*/
-        targetX = _child.position.x;
+        targetX = _child.position.x + _xOffset;
     }
 
     private void Update()
