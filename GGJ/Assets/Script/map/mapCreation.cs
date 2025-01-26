@@ -257,6 +257,15 @@ public class mapCreation : MonoBehaviour
         }
 
         tailleMap = _previousTerrainEndPoint.transform.position.x - tailleMap;
+
+        for (int i = 0; i < 6; i++)
+        {
+            _currentTerrain = _blocTerrain1;
+            GameObject _newTerrain;
+            _newTerrain = Instantiate(_currentTerrain, _previousTerrainEndPoint.transform.position - getStartPoint(_currentTerrain).transform.position, Quaternion.Euler(Vector3.right));
+            _newTerrain.transform.SetParent(transform);
+            _previousTerrainEndPoint.transform.position = _newTerrain.transform.position + getEndPoint(_currentTerrain).transform.position;
+        }
     }
 
     // Update is called once per frame
