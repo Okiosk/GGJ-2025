@@ -7,21 +7,17 @@ public class Bubble : MonoBehaviour
     private Transform _spawnPoint;
 
     public Rigidbody2D Rb;
-    private Animator _anim;
 
     [SerializeField] private float _throwForce = 5;
 
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
-        _anim = GetComponent<Animator>();
         _spawnPoint = GameObject.Find("BubbleSpawnPoint").GetComponent<Transform>();
     }
 
     private void OnEnable()
     {
-        Rb.bodyType = RigidbodyType2D.Dynamic;
-        _anim.SetTrigger("~live");
         transform.position = _spawnPoint.position;
 
         //decides direction to throw
@@ -35,10 +31,9 @@ public class Bubble : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //if hit other thing than bubble, die
-        if(!other.transform.TryGetComponent(out Bubble comp))
+        if(!other.transform.TryGetComponent<Bubble>(out Bubble comp))
         {
-            Rb.bodyType = RigidbodyType2D.Static;
-            _anim.SetTrigger("~die");
+            Die();
         }
     }
 
