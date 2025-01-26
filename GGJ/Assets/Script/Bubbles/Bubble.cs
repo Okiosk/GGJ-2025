@@ -7,17 +7,28 @@ public class Bubble : MonoBehaviour
     private Transform _spawnPoint;
 
     public Rigidbody2D Rb;
+    private Animator _anim;
 
     [SerializeField] private float _throwForce = 5;
+    [SerializeField] private float _minSize;
+    [SerializeField] private float _maxSize;
+    [SerializeField] private AudioSource _soundPop;
 
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
         _spawnPoint = GameObject.Find("BubbleSpawnPoint").GetComponent<Transform>();
+        float randomScale = Random.Range(_minSize, _maxSize);
+        transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+        float randomRotation = Random.Range(0, 360);
+        transform.rotation = new Quaternion(0, 0, randomRotation, 0);
     }
 
     private void OnEnable()
     {
+        Rb.bodyType = RigidbodyType2D.Dynamic;
+        _anim.SetTrigger("~live");
         transform.position = _spawnPoint.position;
 
         //decides direction to throw
@@ -33,7 +44,9 @@ public class Bubble : MonoBehaviour
         //if hit other thing than bubble, die
         if(!other.transform.TryGetComponent<Bubble>(out Bubble comp))
         {
-            Die();
+            Rb.bodyType = RigidbodyType2D.Static;
+            _soundPop.Play();
+            _anim.SetTrigger("~die");
         }
     }
 

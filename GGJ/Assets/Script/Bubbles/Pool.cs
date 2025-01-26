@@ -6,7 +6,7 @@ public class Pool : MonoBehaviour
     [SerializeField] GameObject obj;
 
     [SerializeField] public int Count = 50;
-    private List<GameObject> _objPool = new List<GameObject>();
+    public List<GameObject> _objPool = new List<GameObject>();
 
     public void Awake()
     {

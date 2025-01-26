@@ -28,6 +28,7 @@ public class WindAI : MonoBehaviour
 
     private IEnumerator Move()
     {
+        GetComponent<TrailRendererReset>().TrailReset();
         transform.position = StartPoint;
         float dist = Vector3.Distance(transform.position, EndPoint);
         float startDist = dist;
