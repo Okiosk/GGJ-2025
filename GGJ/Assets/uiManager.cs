@@ -38,7 +38,7 @@ public class uiManager : MonoBehaviour
     {
         if (_moveUI == "es") 
         {
-            _start.transform.position = Vector3.Lerp(_start.transform.position, new Vector3(_start.transform.position.x, 1540,0), _speed * Time.deltaTime);
+            _start.transform.position = Vector3.Lerp(_start.transform.position, new Vector3(_start.transform.position.x, 3000,0), _speed * Time.deltaTime);
         }
         if (_moveUI == "as")
         {
