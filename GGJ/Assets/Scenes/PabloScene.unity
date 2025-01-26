@@ -153,7 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ennemi1: {fileID: 3533843879884114355, guid: b6e55956c9d5ad444831823c355eb0e2, type: 3}
-  ennemi2: {fileID: 3533843879884114355, guid: 35b468373cd4eea439b5e6c35ceece5c, type: 3}
+  ennemi2: {fileID: 3533843879884114355, guid: af221fe5ec9e5664fa0af79396466f3f, type: 3}
+  ennemi3: {fileID: 3533843879884114355, guid: e913a13a02f473a43a06c1d1e6bc43d2, type: 3}
+  ennemi4: {fileID: 3533843879884114355, guid: 61004807cb5a2ee44acef69a3e3d1441, type: 3}
   mainCamera: {fileID: 1919909778}
   spawner: {fileID: 242278361}
   spawnInterval: 1

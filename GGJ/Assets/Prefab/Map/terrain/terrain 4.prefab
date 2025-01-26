@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1228746375987555984}
   - component: {fileID: 7784078165764754592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tile_map_10 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461911680961892450}
   - component: {fileID: 3240376283695890592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tile_map_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681084242682250933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: startPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 7699588835912991307}
   - component: {fileID: 3425994182162413968}
   - component: {fileID: 921712673255921275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: terrain 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3756837543554379592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: endPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7264441617927968351}
   - component: {fileID: 3592545061571234316}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tile_map_10 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

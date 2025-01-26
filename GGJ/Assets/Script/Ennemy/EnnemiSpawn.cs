@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ennemi1 : MonoBehaviour
+public class EnnemiSpawn : MonoBehaviour
 {
 
     public GameObject ennemi1;
@@ -28,7 +28,8 @@ public class Ennemi1 : MonoBehaviour
     }
     private IEnumerator SpawnEnemyCoroutine()
     {
-        spawnInterval = Random.Range(15f, 25f);
+        spawnInterval = Random.Range(2f, 3f);
+
 
         while(true)
         {
