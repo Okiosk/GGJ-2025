@@ -49,6 +49,8 @@ public class CameraMovement : MonoBehaviour
         else if (transform.position.x > targetX)
             xMove -= _speed * Time.deltaTime;
 
+        xMove = Mathf.Clamp(xMove, 0, 100); //maxClamp will be map size
+
         Vector3 targetPos = new Vector3(xMove, yMove, -10);
         targetPos = Vector3.Lerp(transform.position, targetPos, .3f);
         targetPos.z = -10;
