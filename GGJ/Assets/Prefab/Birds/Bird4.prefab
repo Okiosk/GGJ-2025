@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4659879004237990530}
   - component: {fileID: 8660286380404679228}
   m_Layer: 0
-  m_Name: Capsule 4
+  m_Name: Bird4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  distanceFromGround: 3
+  distanceFromGround: 4
   raycastLength: 20
   rotationSpeed: 5
 --- !u!95 &8660286380404679228

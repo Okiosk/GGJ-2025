@@ -7,6 +7,8 @@ public class Ennemi1 : MonoBehaviour
 
     public GameObject ennemi1;
     public GameObject ennemi2;
+    public GameObject ennemi3;
+    public GameObject ennemi4;
 
     public GameObject mainCamera;
     public GameObject spawner;
@@ -26,11 +28,11 @@ public class Ennemi1 : MonoBehaviour
     }
     private IEnumerator SpawnEnemyCoroutine()
     {
-        spawnInterval = Random.Range(15f, 30f);
+        spawnInterval = Random.Range(15f, 25f);
 
         while(true)
         {
-            int choixEnnemi = Random.Range(1, 3);
+            int choixEnnemi = Random.Range(1, 5);
             SpawnEnnemi(choixEnnemi);
             yield return new WaitForSeconds(spawnInterval);
         }
@@ -52,6 +54,14 @@ public class Ennemi1 : MonoBehaviour
                 break;
             case 2:
                 Instantiate(ennemi2, spawnPosition, Quaternion.identity);
+                print(choixEnnemi);
+                break;
+            case 3:
+                Instantiate(ennemi3, spawnPosition, Quaternion.identity);
+                print(choixEnnemi);
+                break;
+            case 4:
+                Instantiate(ennemi4, spawnPosition, Quaternion.identity);
                 print(choixEnnemi);
                 break;
             default:
