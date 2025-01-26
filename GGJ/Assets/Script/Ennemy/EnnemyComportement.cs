@@ -30,7 +30,7 @@ public class EnnemyComportement : MonoBehaviour
             float targetRotation = Mathf.Atan2(groundNormal.y, groundNormal.x) * Mathf.Rad2Deg - 90f; //calcule l'angl entre l'axe horizontal et la normale du sol / convertit en degrés
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, targetRotation), rotationSpeed * Time.deltaTime);
 
-            Debug.Log("Objet détecté : " + hit.collider.name);      
+             
         }
 
        
