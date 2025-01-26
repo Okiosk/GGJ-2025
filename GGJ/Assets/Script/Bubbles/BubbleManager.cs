@@ -13,16 +13,17 @@ public class BubbleManager : MonoBehaviour
         _pool = GetComponent<Pool>();
     }
 
-    private void Start()
-    {
-        InvokeRepeating("Spawn", 0, _spawnInterval);
-    }
-
     private void Spawn()
     {
         _spawnedCount++;
         _pool.AddObj();
         if(_spawnedCount >= _pool.Count)
             CancelInvoke();
+    }
+
+    //call it to spawn all bubbles
+    public void StartGame()
+    {
+        InvokeRepeating("Spawn", 0, _spawnInterval);
     }
 }
