@@ -51,22 +51,17 @@ public class EnnemiSpawn : MonoBehaviour
         {
             case 1:
                 Instantiate(ennemi1, spawnPosition, Quaternion.identity);
-                print(choixEnnemi);
                 break;
             case 2:
                 Instantiate(ennemi2, spawnPosition, Quaternion.identity);
-                print(choixEnnemi);
                 break;
             case 3:
                 Instantiate(ennemi3, spawnPosition, Quaternion.identity);
-                print(choixEnnemi);
                 break;
             case 4:
                 Instantiate(ennemi4, spawnPosition, Quaternion.identity);
-                print(choixEnnemi);
                 break;
             default:
-                print("Pas d'ennemi");
                 break;
         }
     }
