@@ -449,6 +449,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b47c8efd23d004c9061a52a72721a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1048210876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1048210877}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1048210877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048210876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.534394, y: 2.5699618, z: -0.05976808}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1108614583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -891,3 +922,4 @@ SceneRoots:
   - {fileID: 475487716}
   - {fileID: 2072759090}
   - {fileID: 1624167812}
+  - {fileID: 1048210877}
