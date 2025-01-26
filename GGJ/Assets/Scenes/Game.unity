@@ -211,7 +211,7 @@ MonoBehaviour:
   _blocTerrain5: {fileID: 4714403656202573162, guid: 8b0ec71db3202b9428de57cb7271696f, type: 3}
   _blocTerrain6: {fileID: 4714403656202573162, guid: f6014831e4027a44cadfe9019b44d261, type: 3}
   _blocTerrain7: {fileID: 4714403656202573162, guid: b1f7ee7a26f2db249a2c1ee7e1016e93, type: 3}
-  _mapNbBloc: 10
+  _mapNbBloc: 20
   tailleMap: 0
 --- !u!114 &428361388 stripped
 MonoBehaviour:
@@ -854,7 +854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 682}
+  m_AnchoredPosition: {x: 0, y: 1336}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1604506145
@@ -1203,7 +1203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -753}
+  m_AnchoredPosition: {x: 0, y: -1357}
   m_SizeDelta: {x: 351, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2072759089
