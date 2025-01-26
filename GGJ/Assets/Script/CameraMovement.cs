@@ -8,6 +8,8 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Transform _child;
     private float _yOffset;
 
+    [SerializeField] private mapCreation _map;
+
     public float targetX;
 
     [SerializeField] float _speed = 6;
@@ -49,7 +51,7 @@ public class CameraMovement : MonoBehaviour
         else if (transform.position.x > targetX)
             xMove -= _speed * Time.deltaTime;
 
-        xMove = Mathf.Clamp(xMove, 0, 100); //maxClamp will be map size
+        xMove = Mathf.Clamp(xMove, 0, _map.tailleMap - 5);
 
         Vector3 targetPos = new Vector3(xMove, yMove, -10);
         targetPos = Vector3.Lerp(transform.position, targetPos, .3f);

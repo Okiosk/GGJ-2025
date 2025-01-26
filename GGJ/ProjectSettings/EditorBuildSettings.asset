@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/ElliotTest.unity
+    guid: 321eba5c7be4b774283c99e742f3926f
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: a3970753d9f342f41a27380e3600ab04
   m_configObjects: {}
