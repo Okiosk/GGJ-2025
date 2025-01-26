@@ -7,6 +7,9 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Pool _bubblePool;
     [SerializeField] private Transform _child;
     private float _yOffset;
+    private float _xOffset;
+
+    [SerializeField] private mapCreation _map;
 
     public float targetX;
 
@@ -15,12 +18,13 @@ public class CameraMovement : MonoBehaviour
     private void Start()
     {
         _yOffset = Mathf.Abs(transform.position.y - _child.position.y);
+        _xOffset = Mathf.Abs(transform.localPosition.x - _child.position.x);
 
         InvokeRepeating("TargetX", 0, 1);
     }
     private void TargetX()
     {
-        float sumX = 0;
+        /*float sumX = 0;
         int nbActive = 0;
         foreach (var bubble in _bubblePool._objPool)
         {
@@ -30,7 +34,8 @@ public class CameraMovement : MonoBehaviour
                 nbActive++;
             }
         }
-        targetX = sumX/nbActive;
+        targetX = sumX/nbActive;*/
+        targetX = _child.position.x + _xOffset;
     }
 
     private void Update()
@@ -49,7 +54,7 @@ public class CameraMovement : MonoBehaviour
         else if (transform.position.x > targetX)
             xMove -= _speed * Time.deltaTime;
 
-        xMove = Mathf.Clamp(xMove, 0, 100); //maxClamp will be map size
+        xMove = Mathf.Clamp(xMove, 0, _map.tailleMap - 5);
 
         Vector3 targetPos = new Vector3(xMove, yMove, -10);
         targetPos = Vector3.Lerp(transform.position, targetPos, .3f);

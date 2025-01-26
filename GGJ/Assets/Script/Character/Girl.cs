@@ -25,7 +25,7 @@ public class Girl : MonoBehaviour
         {
             _anim.SetTrigger("trRun");
             float targetY = transform.position.y;
-            float targetX = _camMov.targetX;
+            float targetX = transform.position.x + speed * Time.deltaTime;
 
             //if (Mathf.Abs(transform.position.x - _camMov.targetX) > 2)
             //targetX = _camMov.targetX;
@@ -38,14 +38,7 @@ public class Girl : MonoBehaviour
                 targetY = hit.point.y + distanceFromGround;
                 transform.position = new Vector2(transform.position.x, targetY);
             }
-
-            Vector3 targetPos = new Vector3(targetX, targetY, 0);
-
-            if(targetPos.x < transform.position.x)
-                GetComponent<SpriteRenderer>().flipX = true;
-            else
-                GetComponent<SpriteRenderer>().flipX = false;
-            transform.position = Vector2.Lerp(transform.position, targetPos, .001f);
+            transform.position = new Vector3(targetX, targetY, 0);
         }
 
 

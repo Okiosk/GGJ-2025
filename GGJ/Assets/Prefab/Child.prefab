@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4740082bf5a654648ad117a481bbd457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 2
   distanceFromGround: 1.5
   raycastLength: 10
   CanMove: 0
