@@ -11,7 +11,7 @@ public class Girl : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        
 
         LayerMask mask = LayerMask.GetMask("Ground");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, mask);

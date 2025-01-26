@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Transform _child;
     private float _yOffset;
 
-    private float targetX;
+    public float targetX;
 
     [SerializeField] float _speed = 6;
 
