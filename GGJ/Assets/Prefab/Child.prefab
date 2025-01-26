@@ -101,6 +101,7 @@ MonoBehaviour:
   speed: 6
   distanceFromGround: 1.5
   raycastLength: 10
+  CanMove: 0
 --- !u!95 &1375229998797544254
 Animator:
   serializedVersion: 5

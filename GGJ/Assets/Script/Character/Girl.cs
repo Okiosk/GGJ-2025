@@ -4,28 +4,48 @@ using UnityEngine;
 
 public class Girl : MonoBehaviour
 {
-
     public float speed;
     public float distanceFromGround;
     public float raycastLength;
 
+    private CameraMovement _camMov;
+    public bool CanMove = false;
+
+    private Animator _anim;
+
+    private void Awake()
+    {
+        _camMov = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+        _anim = GetComponent<Animator>();
+    }
+
     void Update()
     {
-        
-
-        LayerMask mask = LayerMask.GetMask("Ground");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, mask);
-
-        if (hit.collider != null)
+        if (CanMove)
         {
+            _anim.SetTrigger("trRun");
+            float targetY = transform.position.y;
+            float targetX = _camMov.targetX;
 
-            float targetY = hit.point.y + distanceFromGround;
+            //if (Mathf.Abs(transform.position.x - _camMov.targetX) > 2)
+            //targetX = _camMov.targetX;
 
-            transform.position = new Vector2(transform.position.x, targetY);
+            LayerMask mask = LayerMask.GetMask("Ground");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastLength, mask);
 
-            Vector2 groundNormal = hit.normal;  // Normale du sol détectée
+            if (hit.collider != null)
+            {
+                targetY = hit.point.y + distanceFromGround;
+                transform.position = new Vector2(transform.position.x, targetY);
+            }
 
-            Debug.Log("Objet détecté : " + hit.collider.name);
+            Vector3 targetPos = new Vector3(targetX, targetY, 0);
+
+            if(targetPos.x < transform.position.x)
+                GetComponent<SpriteRenderer>().flipX = true;
+            else
+                GetComponent<SpriteRenderer>().flipX = false;
+            transform.position = Vector2.Lerp(transform.position, targetPos, .001f);
         }
 
 

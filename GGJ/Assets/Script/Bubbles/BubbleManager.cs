@@ -8,6 +8,8 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] private float _spawnInterval = .1f;
     private float _spawnedCount = 0;
 
+    public bool IsBlowing = true;
+
     private void Awake()
     {
         _pool = GetComponent<Pool>();
@@ -23,7 +25,11 @@ public class BubbleManager : MonoBehaviour
         _spawnedCount++;
         _pool.AddObj();
         if(_spawnedCount >= _pool.Count)
+        {
             CancelInvoke();
+            GameObject.Find("Child").GetComponent<Girl>().CanMove = true;
+            IsBlowing = false;
+        }
     }
 
     //call it to spawn all bubbles
