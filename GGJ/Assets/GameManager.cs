@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private mapCreation map;
     [SerializeField]
     private Pool listebubble;
+    [SerializeField]
+    private Girl child;
 
 
     private int total;
@@ -90,6 +92,7 @@ public class GameManager : MonoBehaviour
         }
         if (GameState == "goodend")
         {
+            child.speed = child.speed + .1f;
             ui.afficheEnd();
         }
         if (GameState == "badend")
